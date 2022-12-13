@@ -1,0 +1,19 @@
+#---
+#name: mav_caches
+#---
+#SilverStripe\Core\Injector\Injector:
+#  Psr\SimpleCache\CacheInterface.MAV:
+#    factory: SilverStripe\Core\Cache\CacheFactory
+#    constructor:
+#      defaultLifetime: 3600
+#      namespace: "MAV"
+#  MemcachedClient:
+#    class: 'Memcached'
+#    calls:
+#      - [ addServer, [ 'localhost', 11211 ] ]
+#  MemcachedCacheFactory:
+#    class: 'SilverStripe\Core\Cache\MemcachedCacheFactory'
+#    constructor:
+#      client: '%$MemcachedClient'
+#      namespace: "MAVMEM"
+#  SilverStripe\Core\Cache\CacheFactory: '%$MemcachedCacheFactory'

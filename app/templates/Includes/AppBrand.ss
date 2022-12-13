@@ -1,0 +1,1 @@
+<img class="app-brand__logo" alt="$SiteConfig.Title" height="200" width="200" style="max-height:200px !important;" src="/library/images/logos/wings-over-whales-logo.jpg" />

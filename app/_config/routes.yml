@@ -1,0 +1,8 @@
+---
+Name: approutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+  - '#modelascontrollerroutes'
+
+---

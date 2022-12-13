@@ -1,0 +1,134 @@
+html{
+    font-size:13px !important;
+    font-family: "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif;
+    color: #1C0F33;
+    line-height: 1.2;
+
+}
+
+#tinymce{font-family: "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif;  color:#1C0F33;}
+.cms-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    background: #fafbfc;
+}
+
+.text-center{text-align:center;}
+.text-right{text-align:right;}
+
+
+/* Image styles --------------------------- */
+img.right,img.rightAlone{float:right;margin:0.5em 0 1em 4%;max-width:46%;border-radius:0 !important;}
+img.left,img.leftAlone{float:left;margin:0.5em 4% 1em 0em;max-width:46%;border-radius:0 !important;}
+img.center{display:block;margin-left:auto !important;margin-right:auto !important;border-radius:0 !important;}
+img.leftAlone,img.rightAlone{ display:block;float:none;}
+
+.captionImage{position:relative;overflow:hidden;}
+.captionImage.right{float:right;margin:0.5em 0 1em 4%;max-width:46%;border-radius:0 !important;}
+.captionImage.right img.right, .captionImage.right img.rightAlone{margin:0;max-width:100%;}
+
+.captionImage.left{ float:left;margin:0.5em 4% 1em 0em;max-width:46%;border-radius:0 !important;}
+.captionImage.left img.left,.captionImage.left img.leftAlone{margin:0;max-width:100%;}
+
+ul.gallery p.caption{bottom:.5rem;}
+p.caption{position:absolute;top:auto;bottom:0em;right:0; background:rgb(36 52 69 / 80%); display:inline-block;color:#fff;z-index:30; padding:0.25em .5em; line-height:1.2; font-size:12px;}
+p.caption  img{position:relative;z-index:2;}
+
+
+
+h1,h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{letter-spacing:0.018em;line-height: 1;font-weight:300;margin:0;padding: 0.8rem 0 1.6rem;}
+h1 strong, .h1 strong, h2 strong, .h2 strong, h3 strong, .h4 strong, h4 strong, .h4 strong, blockquote strong{font-weight: 800 !important;display:inline-block;/* line-height:0.9; *//* font-size:1.05em; */}
+h1 strong a, .h1 strong a, h2 strong a, .h2 strong a, h3 strong a, .h4 strong a, h4 strong a, .h4 strong a, blockquote strong a{color:#fff !important;font-weight:600 !important;}
+
+
+html, .root{width:100%;}
+body, .article{}
+h1, .h1{text-transform:uppercase;}
+h2, .h2{text-transform:uppercase;}
+
+
+ 
+h3, .h3{text-transform:uppercase;}
+h4, .h4{text-transform: uppercase;}
+h5, .h5{font-weight:500;}
+p, ul, ol, pre, table, blockquote{}
+ul ul, ol ol, ul ol, ol ul{margin-top:0em;margin-bottom:0em;}
+hr, .hr{width:100%;clear:both;display:block;}
+a, b, i, strong, em, small, code{}
+sub, sup{line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+
+h1 em,h2 em,h3 em,h4 em,h5 em
+{font-size:1.1em;line-height:.8;font-weight:normal; font-family:'BetterTimes'; text-transform:none; color:#00b5b6;}
+
+
+/* PERFECT FOURTH  */
+h1,.h1{font-size: 3.157rem;}
+h1 small,.h1 small{ font-size:.3em;}
+h2,.h2{font-size:2.369rem;}
+h3,.h3{font-size:1.777rem;}
+h3.subpage{font-size:1.5rem;}
+h4,.h4{font-size:1.33rem;}
+h5,.h5{font-size:1.25rem;font-weight:500;}
+
+/* MAJOR THIRD 
+h1,.h1{font-size: 3.157rem;}
+// should be 2.441rem to mtach scale 
+h1 small,.h1 small{ font-size:.3em;}
+h2,.h2{font-size:1.953rem;}
+h3,.h3{font-size:1.563rem;}
+h3.subpage{font-size:1.3rem;}
+h4,.h4{font-size:1.25rem;}
+h5,.h5{font-size:1rem;font-weight:500;}
+
+*/
+
+
+
+
+blockquote{}
+blockquote p{font-weight:500; line-height:1.2;}
+blockquote p[class*="text-center"]{padding-right:5%; padding-left:5%;}
+
+
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+
+.button {     font-size: .8em; background-color: #1C0F33;
+    border-color: #1C0F33;color:#fff;
+    letter-spacing: .03em;display: inline-block; position: relative; text-decoration: none; color: $white; border-radius:2em; cursor: pointer; padding:.5em 1.8em 0.7em 1.8em; line-height: 1;  vertical-align:middle; font-weight: 600;
+}
+
+@font-face {
+    font-family: 'BrownPro';
+    src: url('../../library/fonts/BrownPro-Bold.woff2') format('woff2'),
+        url('../../library/fonts/BrownPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'BrownPro';
+    src: url('../../library/fonts/BrownPro-Regular.woff2') format('woff2'),
+        url('../../library/fonts/BrownPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'BrownPro';
+    src: url('../../library/fonts/BrownPro-Light.woff2') format('woff2'),
+        url('../../library/fonts/BrownPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  

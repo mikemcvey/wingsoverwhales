@@ -1,0 +1,71 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+
+SilverStripe\CMS\Model\VirtualPage:
+  extensions:
+    - App\Extensions\PageTypes\VirtualPageExtension
+
+SilverStripe\SiteConfig\SiteConfig:
+ extensions:
+  - Maverick\SiteConfig\SiteConfigExtension
+
+
+#SilverStripe\Admin\LeftAndMain:
+#  extra_requirements_javascript:
+#    - admindist/index.js
+#  extra_requirements_css:
+#    - admindist/index.css
+
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Security\MemberAuthenticator\ChangePasswordForm:
+    class: Maverick\Security\CustomPasswordForm
+  SilverStripe\Assets\Image_Backend:
+    properties:
+      Quality: 90
+      
+SilverStripe\Security\Member:
+  admin:
+    Email: "imap@ifeelfree.co.nz"
+    PopulateMergeMatch:
+      - 'Email'
+
+
+SilverStripe\Assets\File:
+  allowed_extensions:
+   - svg
+
+SilverStripe\AssetAdmin\Forms\ImageFormFactory:
+  extensions:
+    - Maverick\Extensions\CaptionAssetFormFactoryExtension
+
+SilverStripe\Assets\Image:
+  extensions:
+    - Maverick\Extensions\ImageCaptionExtension
+  allowed_extensions:
+   - svg
+   - xml
+
+
+SilverStripe\CMS\Model\SiteTree:
+ breadcrumbs_delimiter: 
+  - gh
+
+Axllent\MetaEditor\MetaEditor:
+  meta_title_field: "MetaTitle"
+
+Heyday\MenuManager\MenuSet:
+  default_sets:
+    - Main
+    - Footer
+    - SubFooter
+
+SilverStripe\Blog\Model\Blog:
+  extensions:
+    - Maverick\Blog\BlogExtension
+
+SilverStripe\Blog\Model\BlogPost:
+  extensions:
+    - Maverick\Blog\BlogPostExtension

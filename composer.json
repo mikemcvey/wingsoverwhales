@@ -1,0 +1,74 @@
+{
+    "name": "silverstripe/installer",
+    "type": "silverstripe-recipe",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "silverstripe/login-forms": "~4.7.0@stable",
+        "silverstripe/cms": "^4.0",
+        "silverstripe/framework": "^4.0",
+        "dynamic/silverstripe-elemental-blocks": "^3.0",
+        "silverstripe/blog": "^3.3",
+        "jonom/focuspoint": "^3.1",
+        "dnadesign/silverstripe-elemental-virtual": "1.x-dev",
+        "dnadesign/silverstripe-populate": "^2.1",
+        "silverstripe/userforms": "^5.13",
+        "heyday/silverstripe-menumanager": "^3.0",
+        "silverstripe/widgets": "^2.0",
+        "kinglozzer/multiselectfield": "^2.0",
+        "silverstripe/colorpicker": "^1.0@dev",
+        "phptek/jsontext": "^2.1",
+        "silverstripe/tagfield": "^2.4",
+        "bummzack/sortablefile": "^2.0",
+        "unclecheese/dropzone": "dev-master",
+        "undefinedoffset/silverstripe-nocaptcha": "^2.0",
+        "wilr/silverstripe-googlesitemaps": "^2.1",
+       
+        "silverstripers/seo": "^1.2",
+        "silverstripers/elemental-search": "dev-master",
+        "firebrandhq/silverstripe-phonelink": "^2.0",
+        "giggsey/libphonenumber-for-php": "^8.12",
+        "innoweb/silverstripe-international-phone-number-field": "dev-master",
+        "symbiote/silverstripe-gridfieldextensions": "^3.2",
+        "dnadesign/silverstripe-elemental-userforms": "3.x-dev",
+        "dynamic/silverstripe-elemental-tabset": "^2.0",
+        "axllent/silverstripe-version-truncator": "^3.0",
+        "webmen/silverstripe-webp-images": "^0.6.0",
+        "micschk/silverstripe-404logger": "^2.0",
+        "silverstripe/redirectedurls": "^2.1",
+        "axllent/silverstripe-meta-editor": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "oddnoc/silverstripe-artefactcleaner": "^4.0"
+    },
+    "extra": {
+        "resources-dir": "_resources",
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.1"
+        },
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

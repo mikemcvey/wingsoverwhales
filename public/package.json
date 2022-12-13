@@ -1,0 +1,14 @@
+{
+  "name": "South-Pacific-Helicopters",
+  "version": "1.0.0",
+  "description": "made with live by Maverick Digital NZ",
+  "author": "mike@maverickdigital.nz",
+  "license": "ISC",
+  "scripts": {
+    "dev": "rm -rf dist && parcel watch library/parcel/common.js --public-url /dist/"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.3.1",
+    "sass": "^1.27.0"
+  }
+}

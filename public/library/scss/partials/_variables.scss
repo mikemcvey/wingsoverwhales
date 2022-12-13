@@ -1,0 +1,49 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+
+
+
+/*********************
+COLORS
+*********************/
+
+$alert-yellow:      #ff9600;
+$alert-red:         #bf181d;
+$alert-green:       #bf181d;
+$alert-blue:        #00c2f1;
+
+$black:             #000000;
+$white:             #ffffff;
+
+$blue: #5EB3E4;
+$deep-purple: #1C0F33;
+$light-blue: #00b5b6;
+$bright-blue: #0076be;
+$green: #80BC00;
+$pink: #E60A95;
+$orange: #FF9E18;
+$light-purple: #524C73;
+$red: #D22630;
+
+$light-gray:        #F5F5F5;
+$gray:              #AAAAAA;
+$text-color:        $white;
+$meta-gray:         $gray;
+$tan:               #f1ebd9;
+
+$link-color:        $blue;
+$link-hover:        darken($link-color, 9%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;

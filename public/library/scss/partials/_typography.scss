@@ -1,0 +1,97 @@
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+******************************************************************/
+
+$sans-serif:        "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+$headline: $sans-serif;
+.headline{ font-family:$headline;}
+
+$scaleTypeMaxPx: 1970px;
+$scaleTypeMax: 1970;
+
+
+/* Typography
+------------------------ */
+
+
+
+h1,h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{line-height:1.02;font-weight:100;margin:0;padding: 0 0 .45em;text-transform:uppercase !important;}
+h1 strong, .h1 strong, h2 strong, .h2 strong, h3 strong, .h4 strong, h4 strong, .h4 strong, blockquote strong{font-weight: 700;display:inline-block;/* line-height:0.9; *//* font-size:1.05em; */}
+h1 strong a, .h1 strong a, h2 strong a, .h2 strong a, h3 strong a, .h4 strong a, h4 strong a, .h4 strong a, blockquote strong a{color:#fff !important;font-weight:700 !important;}
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h4 a, h4 a, .h4 a, blockquote a{color:inherit !important;}
+
+
+html, .root{width:100%;}
+body, .article{}
+h1, .h1{}
+h2, .h2{}
+
+
+ 
+h3, .h3{}
+h4, .h4{}
+h5, .h5{}
+p, ul, ol, pre, table, blockquote{}
+ul ul, ol ol, ul ol, ol ul{margin-top:0em;margin-bottom:0em;}
+hr, .hr{width:100%;clear:both;display:block;}
+a, b, i, strong, em, small, code{}
+sub, sup{line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+
+html{font-size:calc(16px + (22 - 16) * ((100vw - 600px) / ($scaleTypeMax - 600)));}
+
+h1,.h1{/*font-size: 3.157rem;*/font-size:4.52rem}
+
+/*.intro-copy h1{font-size:4.209rem}*/
+h1 small,.h1 small{ font-size:.3em;}
+
+h2,.h2{/*font-size:2.369rem;*/font-size: 2.6rem;}
+.layout_wrap h1,.layout_wrap .h1{font-size: 3.157rem;}
+
+h1,h2,h3,h4{
+ em{font-size:1.1em;line-height:.8;font-weight:normal; font-family: $headline; text-transform:none; color:$light-blue;}
+}
+.intro-copy em{color:$white;}
+h3,.h3{font-size:1.777rem;}
+
+h3.subpage{font-size:1.5rem;font-weight:bold;}
+
+h4,.h4{font-size:1.4rem;}
+.flex-about h3.title{font-size:calc(40px + (84 - 40) * ((100vw - 600px) / ($scaleTypeMax - 600)));}
+blockquote p{font-size:1em; font-weight:500;padding-right:10%;}
+.intro-copy p{font-size:1em;}
+
+
+
+@media (max-width:600px){
+h2,.h2{/*font-size:2.369rem;*/font-size: 2.8rem;}
+.layout_wrap h1,.layout_wrap .h1{font-size: 2.8rem;}
+    html{font-size:16px;}
+    .flex-about h3.title{font-size:40px;}
+  
+   
+   
+    .services.alternating .col.text h2{font-size:25px;}
+   
+    h3.subpage{font-size:18px;}
+  
+}
+@media (min-width:$scaleTypeMaxPx){
+    html{font-size:20px;}
+   
+   
+    .flex-about h3.title{font-size:84px;}
+   
+   
+
+}
+
+

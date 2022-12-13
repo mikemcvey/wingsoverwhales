@@ -1,0 +1,58 @@
+Page:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension
+  allowed_elements:
+    - DNADesign\Elemental\Models\ElementContent
+    - Dynamic\Elements\Promos\Elements\ElementPromos
+    - Dynamic\Elements\PageLists\Elements\ElementPageLists
+    - Dynamic\Elements\StaffMembers\Elements\ElementStaffMembers
+#    - Maverick\Search\SearchElementSearchBlock
+    - Dynamic\Elements\Embedded\Elements\ElementEmbeddedCode
+    - Dynamic\Elements\Accordion\Elements\ElementAccordion
+    - Dynamic\Elements\Tabset\Element\ElementTabSet
+    - Dynamic\Elements\Oembed\Elements\ElementOembed
+#    - Dynamic\Elements\TimeLines\Elements\ElementTimeLine
+    - Dynamic\Elements\News\Elements\ElementNews
+#    - Dynamic\Elements\Resources\Elements\ElementResources # Resource already exist below
+    - Dynamic\Elements\Gallery\Elements\ElementPhotoGallery
+    - DNADesign\ElementalVirtual\Model\ElementVirtual
+#    - Maverick\Resources\Elements\ResourceElement
+    - DNADesign\ElementalUserForms\Model\ElementForm
+    - Dynamic\Elements\Testimonial\Elements\ElementTestimonial
+    - Dynamic\Elements\Experiences\Elements\ElementExperiences
+
+    
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+   - Maverick\Styling\MaverickBaseElement
+
+Dynamic\BaseObject\Model\BaseElementObject:
+  extensions:
+   - Maverick\BaseObject\BaseObjectExtension
+
+Dynamic\Elements\Promos\Elements\ElementPromos:
+  extensions:
+  - Maverick\Styling\ElementFeatures_Extension
+  - Maverick\ElementContent\ElementContentAreaExtension
+
+Dynamic\Elements\Gallery\Elements\ElementPhotoGallery:
+  extensions:
+  - Maverick\ElementContent\ElementGalleryExtension
+  - Maverick\ElementContent\ElementContentAreaExtension
+
+DNADesign\Elemental\Models\ElementContent:
+  extensions:
+    - Maverick\ElementContent\ElementContentExtension
+    - Maverick\ElementContent\ElementContentAreaExtension
+
+DNADesign\ElementalUserForms\Model\ElementForm:
+  extensions:
+    - Maverick\ElementForm\ElementFormExtension
+
+Dynamic\Elements\PageLists\Elements\ElementPageLists:
+  extensions:
+    - Maverick\ElementContent\ElementContentAreaExtension
+
+Dynamic\Elements\Accordion\Elements\ElementAccordion:
+  extensions:
+    - Maverick\ElementContent\ElementContentAreaExtension

@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'BrownPro';
+    src: url('BrownPro-Bold.woff2') format('woff2'),
+        url('BrownPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BrownPro';
+    src: url('BrownPro-Regular.woff2') format('woff2'),
+        url('BrownPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BrownPro';
+    src: url('BrownPro-Light.woff2') format('woff2'),
+        url('BrownPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.likewise{font-family:"Likewise !important"}
+@font-face {
+    font-family: 'Likewise';
+    src: url('LikewiseRegular-macrons.woff2') format('woff2'),
+        url('LikewiseRegular-macrons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,16 @@
+vendor
+vendor/*
+/public/.htaccess
+/public/assets/*
+/public/node_modules
+/public/node_modules/*
+*.map
+.DS_Store
+/silverstripe-cache/
+/.env
+/public/_resources/
+/public/_resources/*
+/public/_graphql/
+/public/.cache/
+/public/.parcel-cache/
+/.graphql-generated/

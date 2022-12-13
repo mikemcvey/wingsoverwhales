@@ -1,0 +1,13 @@
+#Menu-Maverick-PageAdmin-PageAdmin,
+#Menu-Maverick-RegionAdmin {
+  display: none;
+}
+
+.mce-content-body .text-center {
+  text-align: center;
+}
+.mce-content-body .text-right {
+  text-align: right;
+}
+
+/*# sourceMappingURL=/index.css.map */
