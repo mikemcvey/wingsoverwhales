@@ -14,12 +14,14 @@ Page:
 #    - Dynamic\Elements\TimeLines\Elements\ElementTimeLine
     - Dynamic\Elements\News\Elements\ElementNews
 #    - Dynamic\Elements\Resources\Elements\ElementResources # Resource already exist below
-    - Dynamic\Elements\Gallery\Elements\ElementPhotoGallery
+#    - Dynamic\Elements\Gallery\Elements\ElementPhotoGallery
     - DNADesign\ElementalVirtual\Model\ElementVirtual
 #    - Maverick\Resources\Elements\ResourceElement
     - DNADesign\ElementalUserForms\Model\ElementForm
     - Dynamic\Elements\Testimonial\Elements\ElementTestimonial
     - Dynamic\Elements\Experiences\Elements\ElementExperiences
+    - Dynamic\Elements\Gallery\Elements\ElementGallery
+
 
     
 DNADesign\Elemental\Models\BaseElement:
@@ -35,10 +37,10 @@ Dynamic\Elements\Promos\Elements\ElementPromos:
   - Maverick\Styling\ElementFeatures_Extension
   - Maverick\ElementContent\ElementContentAreaExtension
 
-Dynamic\Elements\Gallery\Elements\ElementPhotoGallery:
-  extensions:
-  - Maverick\ElementContent\ElementGalleryExtension
-  - Maverick\ElementContent\ElementContentAreaExtension
+#Dynamic\Elements\Gallery\Elements\ElementPhotoGallery:
+#  extensions:
+#  - Maverick\ElementContent\ElementGalleryExtension
+#  - Maverick\ElementContent\ElementContentAreaExtension
 
 DNADesign\Elemental\Models\ElementContent:
   extensions:

@@ -50,12 +50,12 @@
                                    <% end_if %>
                                </p>
                                 </div>
-                                <div class="staff_content col">
+                                <div class="staff_content col col-align-middle">
                                       <% if $Title %><h4>$Title</h4><% end_if %>
-                                    <% if $JobRole %><p><strong>$JobRole</strong><% end_if %>
+                                    <% if $JobRole %><p><strong>&bull; $JobRole</strong><% end_if %>
                                      <% if $Teaser %><div><span class="staff_descrip">$Teaser</span></div><% end_if %>
                                      <br/>
-                                  <p><a title="Find out more about $Title" class="headline" href="$Link">Find out more</a></p>
+                                  <p><a title="Find out more about $Title" class="headline button small" href="$Link">&rarr; Find out more</a></p>
                                    
                                 </div>
                             </div>

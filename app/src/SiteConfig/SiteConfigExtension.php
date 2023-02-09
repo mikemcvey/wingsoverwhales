@@ -28,7 +28,7 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldGroup;
-use Maverick\Footer\Models\FooterLinkGroup;
+// use Maverick\Footer\Models\FooterLinkGroup;
 
 use SilverStripe\Assets\Image; 
 use SilverStripe\AssetAdmin\Forms\UploadField;
@@ -58,6 +58,19 @@ class SiteConfigExtension extends DataExtension
   
      
         'GoogleMapsJavaScriptAPIKey' => 'Varchar(100)',
+        'BugMeBarActive' => 'Boolean',
+        'ShowOnlyOnHomepage' => 'Boolean',
+        'BugMeBarMessage' => 'HTMLText',
+
+        'PopupActive' => 'Boolean',
+        'PopupOnlyOnHomepage' => 'Boolean',
+        'PopupLinkURL' => 'Varchar',
+        'PopupMessage' => 'HTMLText',
+        'PopupCookieName' => 'HTMLText',
+        'PopupCookieLength' => 'HTMLText',
+    ];
+    private static $has_one = [
+        'PopupImage' => Image::class,
     ];
     private static $has_many = [
         'Affiliates' => Affiliates::class,
@@ -67,7 +80,7 @@ class SiteConfigExtension extends DataExtension
     
     ];
     private static $owns = [
-        "Affiliates"
+        "Affiliates","PopupImage"
     ];
     public function updateCMSFields(FieldList $fields)
     {
@@ -119,18 +132,31 @@ class SiteConfigExtension extends DataExtension
                 ->addComponent(new GridFieldOrderableRows('Sort'))
            ),
     
+           /*
             FormUtils::make_grid_field_editor(
                 'FooterLinks',
                 'Footer Links',
                 FooterLinkGroup::get(),
                 'Sort',
                 'RecordEditor'
-            ),
+            ), */
         ));
 
-       	$fields->addFieldsToTab('Root.BugMeBar', array(
-            CheckboxField::create('BugMeBarActive','Is Active'),
+        $fields->addFieldsToTab('Root.PopUps.BugMeBar', array(
+            CheckboxField::create('BugMeBarActive'),
+            CheckboxField::create('ShowOnlyOnHomepage'),
             HTMLEditorField::create('BugMeBarMessage'),
+        ));
+
+        $fields->addFieldsToTab('Root.PopUps.PopupModal', array(
+            CheckboxField::create('PopupActive'),
+            CheckboxField::create('PopupOnlyOnHomepage'),
+            TextField::create('PopupCookieName')->setDescription('Unique cookie name for this popup. If changing content please use new name in invalidate cookies.'),
+            TextField::create('PopupCookieLength')->setDescription('Frequency in days to pause after initial showing (use decimals for 1/2 day ie .5)'),
+            TextField::create('PopupLinkURL'),
+            UploadField::create('PopupImage'),
+            HTMLEditorField::create('PopupMessage')
+
         ));
 
 

@@ -51,9 +51,13 @@
 						<% include Banner %>
 				</section>
 				<!-- end intro -->
+				<% if $CurrentMember %>
+			<a class="edit_link" href="$CMSEditLink"> edit page </a>
+			<% end_if %>
 				<!-- begin main -->
 				
 				<div id="main" class="layout_wrap" role="main">  
+				
 						$Layout 
 						<%--
 						<% if $ClassName == "SilverStripe\Blog\Model\Blog" || $ClassName == "SilverStripe\Blog\Model\BlogPost"  %> 
@@ -128,9 +132,10 @@
 			</div>
 		</div>
 		<% include TreeNavigation %>
+		<% include popupModal %>
 	 <div class="back-to-top-wrap noprint"><a class="back-to-top" href="{$BaseURL}"></a></div> 
 
-	<%-- <script defer async type="text/javascript" src="https://ecozipadventures.rezdy.com/pluginJs?script=modal"></script> --%>
+	<%-- <script defer async type="text/javascript" src="https://wingsoverwhalesnz.rezdy.com/pluginJs?script=modal"></script> --%>
 
 <script>
 
@@ -146,6 +151,29 @@
 window.addEventListener('load', checkJSLoaded);
 
 function checkJSLoaded() {
+
+
+	$('.buildLink').each(function( index ) {
+
+				linkBase = $(this).closest('.elemental').find('.edit-section').attr('data-edit-section');
+				console.log(linkBase);
+				if(linkBase == undefined){
+					console.log('none');
+					
+				}else{
+				var to = linkBase.lastIndexOf('/');
+				to = to == -1 ? linkBase.length : to + 1;
+				linkBase = linkBase.substring(0, to);
+
+
+				linkStart = 'ItemEditForm/field/Promos/item/';
+				linkID = $(this).attr('data-id');
+				linkEnd = '/edit';
+				$(this).attr('href', linkBase + linkStart + linkID  + linkEnd);
+				
+				}
+				 //$( this ).find('.edit-section');
+				});
 
 	jQuery('a.readmore').on('click', function(event){
 		var moretext = "+ Read More";
@@ -173,7 +201,7 @@ function checkJSLoaded() {
 	  } else {
 		console.log('The page is not in an iframe'); 
 		var script = document.createElement('script');
-		script.src = 'https://ecozipadventures.rezdy.com/pluginJs?script=modal';
+		script.src = 'https://wingsoverwhalesnz.rezdy.com/pluginJs?script=modal';
 		script.defer = true;
 		document.body.appendChild(script);
 	}
@@ -258,6 +286,19 @@ function checkJSLoaded() {
             headings[i].setAttribute('data-aos-anchor-placement', "top-bottom");
             headings[i].setAttribute('data-aos-delay', i + "00");
         }
+ 		items = document.querySelectorAll("ul.experience .item");
+        for (var i = 0; i < items.length; i++) {
+            items[i].setAttribute('data-aos', "fade-up");
+            items[i].setAttribute('data-aos-anchor-placement', "top-bottom");
+            items[i].setAttribute('data-aos-delay', i + "00");
+        }
+		items = document.querySelectorAll("#gallery-instagram li");
+        for (var i = 0; i < items.length; i++) {
+            items[i].setAttribute('data-aos', "fade-in");
+            items[i].setAttribute('data-aos-anchor-placement', "top-bottom");
+            items[i].setAttribute('data-aos-delay', i + "00");
+        }
+		
         AOS.init();
     });
     // load the script file

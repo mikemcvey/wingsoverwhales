@@ -3,7 +3,7 @@
 <% if $Children %>
     <ul>
     <% loop $Children %>
-        <% if $ClassName == "ExperiencePage" || $ClassName == "StaffPage"  %>
+        <% if $ClassName == "-ExperiencePage" || $ClassName == "StaffPage"  %>
         <% else %>
             <% include TreeMenuItem %>
         <% end_if %>

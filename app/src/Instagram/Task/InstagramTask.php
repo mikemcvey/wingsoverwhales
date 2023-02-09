@@ -23,7 +23,7 @@ class InstagramTask extends BuildTask
     public function run($request)
     {
 
-      $api = 'https://v1.nocodeapi.com/jedmaverick/instagram/lBeXMKbfPnuRtRxt';
+      $api = 'https://v1.nocodeapi.com/jedmaverick/instagram/RUxtnYEqvAtrOpYS';
 
       try {
           $client = new Client();

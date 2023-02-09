@@ -70,6 +70,9 @@ ShortcodeParser::get('default')->register('staff', ['Page', 'staff_member_func']
 ShortcodeParser::get('default')->register('add_booking_button', ['Page', 'add_booking_button_func']);
 ShortcodeParser::get('default')->register('add_gallery', ['Page', 'add_gallery_func']);
 ShortcodeParser::get('default')->register('faqs', ['Page', 'add_faqs_func']);
+ShortcodeParser::get('default')->register('star_rating', ['Page', 'starRatingFunc']);
+
+//add_shortcode( 'stars', 'starRatingFunc' );
 
 
 ShortcodeParser::get('default')->register('add_mammals', ['Maverick\Mammals\Mammal', 'add_mammals_func']);

@@ -1,13 +1,9 @@
 
 /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
+Typography
 ******************************************************************/
 
-$sans-serif:        "proxima-nova", "Open Sans", Helvetica, Arial, sans-serif;
+$sans-serif:        proxima-nova, "Open Sans", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
 $headline: $sans-serif;
@@ -22,7 +18,11 @@ $scaleTypeMax: 1970;
 
 
 
+
 h1,h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{line-height:1.02;font-weight:100;margin:0;padding: 0 0 .45em;text-transform:uppercase !important;}
+.layout_wrap{
+ h1,h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{color:$green;}
+}
 h1 strong, .h1 strong, h2 strong, .h2 strong, h3 strong, .h4 strong, h4 strong, .h4 strong, blockquote strong{font-weight: 700;display:inline-block;/* line-height:0.9; *//* font-size:1.05em; */}
 h1 strong a, .h1 strong a, h2 strong a, .h2 strong a, h3 strong a, .h4 strong a, h4 strong a, .h4 strong a, blockquote strong a{color:#fff !important;font-weight:700 !important;}
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h4 a, h4 a, .h4 a, blockquote a{color:inherit !important;}
@@ -57,7 +57,7 @@ h2,.h2{/*font-size:2.369rem;*/font-size: 2.6rem;}
 .layout_wrap h1,.layout_wrap .h1{font-size: 3.157rem;}
 
 h1,h2,h3,h4{
- em{font-size:1.1em;line-height:.8;font-weight:normal; font-family: $headline; text-transform:none; color:$light-blue;}
+ em{font-size:1.1em;line-height:.8;font-weight:normal; font-family: $headline; text-transform:none; }
 }
 .intro-copy em{color:$white;}
 h3,.h3{font-size:1.777rem;}

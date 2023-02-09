@@ -77,10 +77,17 @@ class Mammal extends DataObject
 
     public static function add_mammals_func($arguments, $content = null, $parser = null, $tagName) 
     {
+        if(!isset($arguments['layout'])){
+            $arguments['layout'] ="Carousel";
+        }
+
+
         ob_start(); 
     
         $arrayData = new ArrayData([
-             'Mammals' => Mammal::get()
+             'Mammals' => Mammal::get(),
+             'Layout' => $arguments['layout']
+
          ]);
          
          echo $arrayData->renderWith('Maverick/Mammals/MammalShortcode');

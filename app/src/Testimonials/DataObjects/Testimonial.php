@@ -9,6 +9,9 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\GridField\GridFieldSortableRows;
 
+use SilverStripe\View\Parsers\ShortcodeParser;
+
+
 class Testimonial extends DataObject
 {
 
@@ -17,6 +20,7 @@ class Testimonial extends DataObject
     private static $db = [
         'Title'     => 'Varchar(255)',
         'Location' => 'Varchar(255)',
+        'StarRating' => 'Varchar(255)',
         'Content'   => 'HTMLText',
         'SortOrder' => 'Int'
     ];
@@ -29,6 +33,10 @@ class Testimonial extends DataObject
 
     private static $default_sort = 'SortOrder';
 
+
+    private static $casting = [
+        'myStarRating' => 'HTMLText',
+    ];
     private static $field_labels = [
         'Title'   => 'Name',
         'Location' => 'Location',
@@ -37,6 +45,7 @@ class Testimonial extends DataObject
     private static $summary_fields = [
         'Title',
         'Location',
+        'StarRating',
         'Content',
         'TestimonialCategory.Title'
      ];
@@ -50,12 +59,17 @@ class Testimonial extends DataObject
         $fields->removeByName(array(
             'SortOrder'
         ));
- 
+        $fields->dataFieldByName('StarRating')->setDescription('Numeric values only! ie: 4 / 4.5 or 5');
+              
         return $fields;
     }
  
-   
- 
+
+    public function myStarRating($rating){
+        if($this->StarRating>0){
+         return ShortcodeParser::get_active()->parse('[star_rating rating="'.$this->StarRating.'"]');
+        }
+     }
     
    
 }

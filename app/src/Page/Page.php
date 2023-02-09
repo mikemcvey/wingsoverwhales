@@ -82,7 +82,8 @@ use Maverick\Experiences\GalleryImage;
             'SurveyButton' => 'HTMLText',
             'AddImage'=> 'HTMLText',
             'add_gallery_func' => 'HTMLText',
-            'add_booking_button_func' =>'HTMLText'
+            'add_booking_button_func' =>'HTMLText',
+            'starRatingFunc' =>'HTMLText'
             
         ];
       
@@ -449,24 +450,35 @@ use Maverick\Experiences\GalleryImage;
         {
             return null;
         }
-        
+       
         public static function list_subpages_func($arguments, $content = null, $parser = null, $tagName) 
         {
             
             ob_start(); 
-            //echo "<pre>" . $tagName . "</em> " . $content . "; " . count($arguments) . " arguments.</pre>";
-            if(isset($arguments['pageID'])){
+           // echo "<pre>" . $tagName . "</em> " . $content . "; " . count($arguments) . " arguments. ".$arguments['slug']."</pre>";
+            //print($arguments);
 
+            if(isset($arguments['slug'])){
+                /*
                 if ($arguments['pageID'] == '834') {
                     $arguments['pageID'] = '1064';
                 }
-                
-                $current_page = Page::get()->byID($arguments['pageID']);
-
+                */
+            //$current_page = Page::get()->byID($arguments['slug']);
+                //$current_page = Page::get()->byID(6);
+              //echo $arguments['slug'];
+                /*$current_page = Page::get()->filter([
+                    'URLSegment' => $arguments['slug'],
+                ])->first(); */
+                $current_page = SiteTree::get()->filter([
+                    'URLSegment' => $arguments['slug'],
+                ])->first();
+               // echo ' $current_page'.$current_page;
+               // var_dump($current_page);
                 }else{
                 $current_page = Director::get_current_page();
             }
-
+          // echo  $current_page->ID;
 
         // $current_page =  DataObject::get_one('Page', "SiteTree.ID=2" );
 
@@ -475,9 +487,10 @@ use Maverick\Experiences\GalleryImage;
             if(substr(Controller::curr()->getRequest()->getURL(), 0, 6) == 'admin/'){
                 return ob_get_clean();
             }
+           // if(null !== $current_page && $current_page->Children() &&  $current_page->URLSegment != 'home'  && $current_page->URLSegment != 'stories'){ 
 
    
-            if(null !== $current_page && $current_page->Children() &&  $current_page->URLSegment != 'home'  && $current_page->URLSegment != 'stories'){ 
+            if(null !== $current_page && $current_page->Children()){ 
                 
                 if (!empty($current_page->Children())) { 
                     
@@ -644,6 +657,30 @@ use Maverick\Experiences\GalleryImage;
         public function SurveyButton(){
             return '<a href="/tairawhiti-wellness-survey" class="survey_button"><span class="anim">Take the survey</span></a>';
         }
+       
+
+        public static function starRatingFunc($arguments, $content = null, $parser = null, $tagName) {
+        
+            if(!isset($arguments['rating'])){
+                return;
+            }
+            $count1 = $arguments['rating'] / 5;
+            $count2 = $count1 * 100;
+            $rating = number_format($count2, 0);
+
+            ob_start(); 
+            ?>
+            <div class="star-rating">
+                <span style="width: <?php echo $rating; ?>%"></span>
+            </div>
+            <?php
+            
+            $output = ob_get_clean();
+            return $output;
+        }
+     
+        
+       
         public function AddImage($id,$class,$alt){
            
             return ShortcodeParser::get_active()->parse('[image id="'.$id.'" alt="'.$alt.'" class="'.$class.'" ]');
@@ -806,7 +843,8 @@ use Maverick\Experiences\GalleryImage;
       return $instagramPosts;
            
        }
+      
 
     }
-
+    
 }

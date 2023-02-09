@@ -9,6 +9,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\TagField\TagField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Blog\Model\BlogTag;
@@ -28,6 +29,8 @@ class ExperiencePage extends Page
     private static $db = array(
         
         'ExpFromPrice' => 'Varchar',
+         'SpecialOffer' => 'Boolean',
+        'SpecialOfferPrice' => 'Varchar',
         'ExpCurrencyCode' => 'Varchar',
         'ExpDuration' => 'Varchar',
         'ExpSeason' => 'Varchar',
@@ -80,6 +83,12 @@ class ExperiencePage extends Page
         $fields->addFieldToTab(
             'Root.Main',TextField::create('ExpFromPrice'), 'ElementalArea'
         );
+         $fields->addFieldToTab(
+            'Root.Main',CheckboxField::create('SpecialOffer'), 'ElementalArea'
+        );
+        $fields->addFieldToTab(
+            'Root.Main',TextField::create('SpecialOfferPrice'), 'ElementalArea'
+        );
         $fields->addFieldToTab(
             'Root.Main',TextField::create('ExpCurrencyCode'), 'ElementalArea'
         );
@@ -130,6 +139,9 @@ class ExperiencePage extends Page
         //$return = '';
         ob_start(); 
         if($this->ExpDuration){ ?>
+            <li><strong>Allow <?php echo $this->ExpDuration; ?></strong></li>
+            <?php }
+       /* if($this->ExpDuration){ ?>
         <li>Duration: <strong><?php echo $this->ExpDuration; ?></strong></li>
         <?php }
         if($this->ExpLevel){ ?>
@@ -140,7 +152,7 @@ class ExperiencePage extends Page
             <?php }
         if($this->ExpHelicopterModel){ ?>
             <li>Duration: <strong><?php echo $this->ExpHelicopterModel; ?></strong></li>
-            <?php }
+            <?php } */
         
     $return = ob_get_clean();
     if($return != ''){
@@ -157,6 +169,10 @@ class ExperiencePage extends Page
         return  $allTags;
         //return implode($this->ExperienceTags(), ' ');
     }
-    
+ 
+    public function addStarRating($rating){
+         return ShortcodeParser::get_active()->parse('[star_rating rating="'.$rating.'"]');
+     }
 
+    
 }

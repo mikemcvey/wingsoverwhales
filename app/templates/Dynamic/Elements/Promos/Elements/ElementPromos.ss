@@ -90,12 +90,12 @@
                                     <% else %>
                                         <% include PromoTile %>
                                     <% end_if %>
-                                    
+
                                 </li>
                                 <% end_loop %>
                             <% end_if %>
-                        </ul>                      
-                        <div class="swiper-pagination"></div>
+                        </ul>           
+                        <% if $PromoList.Count >= 2 %><div class="swiper-pagination"></div><% end_if %>
 
                     </div>
                

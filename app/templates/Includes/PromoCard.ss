@@ -15,6 +15,9 @@
                     <% end_with %>
                 <% end_if %>
                 </div>
+            <% if $CurrentMember %>
+  			<a class="edit_link buildLink" data-id="$ID" href="$ID">Promo $ID</a>
+			<% end_if %>
         </div>
     <div class="tile-copy">
         <div class="tile-inner">
@@ -27,9 +30,9 @@
             <% end_if %>
         </div>
     <div class="swiper-nav-wrap" style="display:none;"><div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div></div>
+    <div class="swiper-button-next"></div></div> 
     </div>
-      <% if $ElementLink.Template !="button" && $ElementLink.Template !="buttonghost" %> 
+      <% if $ElementLink.LinkURL && $ElementLink.Template !="button" && $ElementLink.Template !="buttonghost" %> 
         <a <% if $ElementLink.OpenInNewWindow %>target="_blank"<% end_if %> href="$ElementLink.LinkURL" class="link-overlay" title="Go to $Title"><span class="sr-only">$ElementLink.Title</span></a>
         <% end_if %>
 </article>

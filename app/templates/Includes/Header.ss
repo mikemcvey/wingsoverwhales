@@ -1,8 +1,14 @@
 <header id="header" class="anim header clearfix layer overflow">
+<% if $SiteConfig.BugMeBarActive %>
+  <div id="bugme">
+    $SiteConfig.BugMeBarMessage
+  </div>
+<% end_if %>
+<div style="padding:1.5% 2.8%;">
 	<div class="inner grid grid-nogutter clearfix">
 		<div class="logo col col-fixed col-align-middle">
 				<a class="desktop" href="$BaseHref">
-				<svg class="header-logo" alt="$SiteConfig.Title"  preserveAspectRatio="xMinYMin meet" >
+				<svg class="header-logo" alt="$SiteConfig.Title"  preserveAspectRatio="xMinYMin meet" width="178" height="55" >
 					<use class="header-svg" xlink:href="#logo" ></use>
 				</svg>
 				</a>
@@ -79,5 +85,6 @@
 		</nav>
 
 	</div>
+</div>
 </header>
 <%-- end header --%>

@@ -1,14 +1,7 @@
 /******************************************************************
-Site Name:
-Author:
-
 Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
 ******************************************************************/
-/* https://flexgridlite.elliotdahl.com/ */
+
 /* grid + padding styles */
 .grid{box-sizing:border-box;display:-webkit-flex;display:-ms-flexbox;display:-webkit-box;display:flex;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;-webkit-box-flex:0;flex:0 1 auto;-webkit-flex-direction:row;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;/* margin:0 -8px 0 -8px; */}
 .grid.grid-nogutter{margin:0;}
@@ -63,11 +56,11 @@ called at the top the style.scss stylesheet.
 	.col-lg{flex:100%;max-width:100%;}
 }
 
-
+.home .el-layer-1 .pad-top-default{padding-top:1rem}
 
 /* padding styles */
 @media (min-width:600px) {
-	.pad-top-default{padding-top:2rem}
+	.pad-top-default{padding-top:3rem}
 	.pad-bot-default{padding-bottom:2rem}
 	
 	.pad-top-200{padding-top:10rem}

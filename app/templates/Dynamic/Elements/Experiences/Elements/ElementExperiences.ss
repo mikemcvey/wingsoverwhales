@@ -21,11 +21,13 @@
                     <label for="type-whale-flights">
                         <input type="checkbox" class="other" value=".type-whale-flights" id="type-whale-flights" />Whale Flights </label>
                     <label for="type-scenic-flights">
-                        <input type="checkbox" class="other" value=".type-scenic-flights" id="type-scenic-flights" />Scenic Flight </label>
-                    <label for="type-adventure">
+                        <input type="checkbox" class="other" value=".type-whale-watching-packages" id="type-whale-watching-packages" />Whale Watching Packages </label>
+                  
+                  
+                   <%--  <label for="type-adventure">
                         <input type="checkbox" class="other" value=".type-adventure" id="type-adventure" />Adventure </label>
                     <label for="type-food-wine-gin">
-                        <input type="checkbox" class="other" value=".type-food-wine-gin" id="type-food-wine-gin" />Food, Wine & Gin </label>
+                        <input type="checkbox" class="other" value=".type-food-wine-gin" id="type-food-wine-gin" />Food, Wine & Gin </label> --%>
                     </div>
                 </div>
                 </div>
@@ -75,20 +77,27 @@
       </div>
     </div>
      <% end_if  %>
+     
+     $AllTags 
+
+
     <div class="inner inner-$inner_wrap  $layout_class clearfix">
 
-            <div id="experience-{$ID}" class="swiper staff pad-bot-20">
-                <ul id="expcontainer" data-id="experience-{$ID}-list" class="experience <% if $Layout == "Carousel" %> swiper-wrapper <% end_if %>">
-                    <% if $ExperiencePages %>
-                    <% loop $ExperiencePages %>
-                     
-                    <li class="<% if $Top.Layout == 'Carousel' %>swiper-slide <% end_if %> $Layout item type-{$Parent.URLSegment} $allExperienceTags  <% if $Pos > 8 %> hidden <% end_if %>">
-                            <article class="experience grid ">
-                                <div class="card">
+            <div id="experience-{$ID}" class="swiper staff pad-bot-20 overflow">
+                <ul id="expcontainer" data-id="experience-{$ID}-list" class="experience <% if $Layout == "Carousel" %> swiper-wrapper overflow <% end_if %>">
+                    <% if $Experiences %>
+                    <% loop $Experiences %>
+                   
+                    <li class="<% if $Top.Layout == 'Carousel' %>swiper-slide <% end_if %> $Layout item type-{$Parent.URLSegment} $allExperienceTags  <% if $SpecialOffer %>mike special-offer mike<% end_if %><% if $Pos > 8 %> hidden <% end_if %>">
+                            <article class="experience grid  ">
+                                <div class="card <% if $Top.Layout == 'Carousel' %>col<% end_if %>">
+                                <% if $CurrentMember %>
+			                        <a class="edit_link" href="$CMSEditLink"> edit Experience </a>
+			                    <% end_if %>
                                     <a href="$Link" class="link-overlay">
                                 <% if $FeaturedImage %>
                                 <% with $FeaturedImage %>
-                                        <img src="$Fill(480,360).Link"
+                                        <img src="$Fill(550,650).Link"
                                         class="abs cover anim"
                                         style="object-position: $PercentageX% $PercentageY%"
                                         alt="Meet $Title" />
@@ -96,22 +105,31 @@
                                  <% end_if %>
                                 </a>
                                 </div>
-                                <div class="experience_content"> 
+                                <div class="experience_content <% if $Top.Layout == 'Carousel' %>col <% end_if %>"> 
                                     <div class="match">
                                         <p class="category-meta">$Parent.Title</p>
                                         <% if $Title %><h4>$Title</h4><% end_if %>
-                                        <% if $Teaser %><p><span class="experience_descrip line-clamp three">$Teaser</span></p><% end_if %>
+                                         $ExperienceInfo
+                                        <% if $FullTeaser %><p><span class="experience_descrip -line-clamp -three">$FullTeaser</span></p><% end_if %>
                                     </div>
-                                    <p class="price">
-                                        <span>from</span>
-                                        $ExpCurrencyCode $ExpFromPrice </p>
-                                    <div class="match2">
-                                     <hr/>
-                                     $ExperienceInfo
+                                    <div class="experience_footer grid grid-nogutter">
+                                        <div class="col col-align-bottom">
+                                            <%-- <p class="price">
+                                                <span>from</span>
+                                                $ExpCurrencyCode $ExpFromPrice </p> --%>
+                                            <% if $ExpFromPrice || $SpecialOfferPrice %>
+                                                <p class="price <% if $SpecialOfferPrice %>special-offer<% end_if %>">
+                                                <span>from</span>
+                                                $ExpCurrencyCode <% if $SpecialOfferPrice %><small style="font-size:.5em;"><strike>$ExpFromPrice</strike></small><% else %>$ExpFromPrice<% end_if %> $SpecialOfferPrice  </p>
+                                            <% end_if %>
+                                            <div class="match2">
+                                           
+                                            </div>
+                                            <p>
+                                            <% if $ExpDirectBookingLink %><a id="button-booking" class="button booking_but button-booking rezdy rezdy-modal" href="$ExpDirectBookingLink">Book Now</a> <% else %> $add_booking_button_func(null, null, null, null) <% end_if %>  <a title="Find out more about $Title" class="button alt" href="$Link">Find Out More</a>
+                                            </p>
+                                        </div>
                                     </div>
-                                     <p style="padding-top:1em;">
-                                     <% if $ExpDirectBookingLink %><a id="button-booking" class="button booking_but button-booking rezdy rezdy-modal" href="$ExpDirectBookingLink">Book Now</a> <% else %> $add_booking_button_func(null, null, null, null) <% end_if %>  <a title="Find out more about $Title" class="button alt" href="$Link">View More</a>
-                                    </p>
 
                                 </div>
                             </article>
@@ -119,13 +137,13 @@
                     <% end_loop %>
                      <% end_if %>
                 </ul>
-                <div class="swiper-pagination"></div>
-                  <!-- If we need navigation buttons -->
-
+                <% if $Layout == "Carousel" %> 
                 <div class="swiper-navigation">
                   <div class="swiper-prev"></div>
                   <div class="swiper-next"></div>
-              </div>
+                </div>
+               <div class="swiper-pagination"></div>
+               <% end_if %>
             </div>
             <% if $ExperiencePages.Count > 8 %>
             <p class="text-center"><a href="javascript:void(0);" onclick="return false;" class="button" id="more_but">See More Experiences </a></p>
@@ -164,15 +182,17 @@ window.addEventListener("swiperLoaded", function(evt) {
     var swiper = new Swiper("#experience-{$ID}", {
         slidesPerView: "auto",
         spaceBetween: 0,
-        freeMode: true,
-        autoplay: {
+        freeMode: false,
+       /* autoplay: {
             delay: 3000,
             pauseOnMouseEnter: true,
             disableOnInteraction: false
-            },
+            },*/
         pagination: {
             el: "#experience-{$ID} .swiper-pagination",
-            clickable: true,
+            clickable: false,
+            type: "fraction"
+    
         },
         navigation: {
             nextEl: "#experience-{$ID} .swiper-next",

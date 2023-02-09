@@ -169,7 +169,7 @@ class ElementExperiences extends BaseElement
     {
 
         if ($this->ExperienceListSource == "Tag" && $this->ExperienceTags()->column('ID')) {
-            return ExperiencePage::get()->filter('ExperienceTags.ID', $this->ExperienceTags()->column('ID'));
+            return ExperiencePage::get()->filter('ExperienceTags.ID', $this->ExperienceTags()->column('ID'))->sort('SortOrder');
         }
         return  $this->ExperiencePages()->sort('SortOrder');
     }
